@@ -258,17 +258,7 @@ public class Practice {
         }
     }
 
-//    public static class Path {
-//        public int path_find(char[][] grid){
-//            int r, c;
-//            for(int i = 0; i < grid.length; i++){
-//                for(int j = 0; j < grid[0].length; j++){
-//                    if(grid[i][j] == 's') r = i; c = j;
-//                }
-//            }
-//
-//        }
-//    }
+
     public static class MergeLists {
         public ListNode mergeTwoLists(ListNode l1, ListNode l2){
             ListNode head = new ListNode(0), curr = head;
@@ -354,18 +344,6 @@ public class Practice {
             }
         }
     }
-
-//    public static class ArrayToBST {
-//        public TreeNode sortedArrayToBST(int[] nums) {
-//            int start = 0;
-//            int end = nums.length - 1;
-//
-//            while(start < end){
-//                TreeNode head = new TreeNode((start + end) / 2);
-//
-//            }
-//        }
-//    }
 
     public static class JewelsStones {
         public int numJewelsInStones(String J, String S) {
@@ -826,24 +804,24 @@ public class Practice {
 
     }
 
-    public static void main(String[] args) {
-//        int[] nums = {9,6,4,2,3,5,7,0,1};
-//        TreeNode root = new TreeNode(1);
-//        TreeNode a = new TreeNode(2);
-//        TreeNode b = new TreeNode(2);
-//        TreeNode c = new TreeNode(3);
-//        TreeNode d = new TreeNode(3);
-//        root.left = a; root.right = b; a.right = c; b.right = d;
-//        String word = "abhay";
-//        int[][] points = new int[][]{{3,3},{5,-1},{-2,4}};
-//        int[][] res = kClosest(points, 2);
-//        System.out.println(word.charAt(4));
+    public static ListNode reverseList(ListNode head){
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode next = null;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
 
-//        char[][] grid = new char[][]{{'#',' ','#'}, {'s', ' ', 'e'}, {'#','#','#'}};
-//        Path obj = new Path();
-//        int res = obj.path_find(grid);
-        String[] available = {"s1","s2"};
-        long carbon = 750;
-        System.out.println(Arrays.toString(solution(available, carbon)));
+    public static void main(String[] args) {
+
+        CoinChange obj = new CoinChange();
+        int[] coins = {2};
+        int amount = 3;
+        System.out.println(obj.coinChange(coins, amount));
     }
 }
