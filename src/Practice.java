@@ -713,6 +713,17 @@ public class Practice {
         return bd.doubleValue();
     }
 
+    public static int[][] transpose(int[][] A){
+        int rows = A[0].length;
+        int cols = A.length;
+        int[][] res = new int[rows][cols];
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                res[i][j] = A[j][i];
+            }
+        }
+        return res;
+    }
 
     public static class Solution {
         public double solution(String[] aircraftEmissions, String[] flightItineraries, String origin, String destination) {
@@ -819,9 +830,7 @@ public class Practice {
 
     public static void main(String[] args) {
 
-        CoinChange obj = new CoinChange();
-        int[] coins = {2};
-        int amount = 3;
-        System.out.println(obj.coinChange(coins, amount));
+        int[][] A = {{1,2,3}, {4,5,6}};
+        System.out.println(Arrays.deepToString(transpose(A)));
     }
 }
